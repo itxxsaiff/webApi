@@ -16,7 +16,7 @@
                 <h1>All Items</h1>
             </div>
             <div class="col-6 d-flex justify-content-end">
-                <a href="index.php" class="btn btn-dark">+ NEW</a>
+                <a href="index.php" class="btn btn-primary">+ NEW</a>
             </div>
         </div>
       </div>
@@ -56,7 +56,7 @@
               <td class='text-center' style='padding-top: 1.9rem'>" . $product['cost_price'] . "</td>
               <td class='text-center' style='padding-top: 1.9rem'>" . $product['sale_price'] . "</td>
               <td class='text-center' style='padding-top: 1.9rem'>
-              <a href='updateProduct.php?productID=". $product['id'] ."' class='btn btn-dark'>Update</a>
+              <a href='updateProduct.php?productID=". $product['id'] ."' class='btn btn-primary'>Update</a>
               <button class='btn btn-danger ms-3' onclick=\"if(confirm('Are you sure that you want to delete the product?'))window.location.href= '_delete.php?productID=". $product['id'] ."'\">Delete</button>
               </td>
             </tr>

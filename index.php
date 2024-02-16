@@ -263,7 +263,7 @@
                             </div>
                             <div class="row mt-5">
                                 <div class="col-12">
-                                    <button class="btn btn-dark px-5 py-2 w-100" type="submit">Add Product</button>
+                                    <button class="btn btn-primary px-5 py-2 w-100" type="submit">Add Product</button>
                                 </div>
                             </div>
                             <div class="row mt-4">
