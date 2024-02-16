@@ -22,7 +22,7 @@
         </div>
         <div class="row">
             <div class="col-8 bg-white shadow shadow-lg p-4 mt-4 rounded-4 mx-auto">
-                <form action="http://localhost/Invenroty_system/_addProduct.php" method="post">
+                <form action="_addproduct.php" method="post">
                     <div class="row">
                         <div class="col-12 mb-3">
                             <label for="" class="mb-2 fs-5 text-danger">Product Name: *</label>
@@ -54,7 +54,7 @@
                             </select>
                         </div>
                         <div class="col-12 mt-2">
-                            <button class="btn btn-dark w-100" type="button">Add Product</button>
+                            <button class="btn btn-dark w-100" type="submit">Add Product</button>
                         </div>
                     </div>
                 </form>
