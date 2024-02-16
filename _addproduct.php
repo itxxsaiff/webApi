@@ -13,11 +13,7 @@ if(isset($_POST['type'])) {
 $productName = htmlspecialchars($_POST['product_name']);
 $productSKU = htmlspecialchars($_POST['product_sku']);
 $productUnit = htmlspecialchars($_POST['unit']);
-if(isset($_FILES['product_image'])){
-    $productImage = $_FILES['product_image'];
-}else{
-    $productImage = '';
-}
+$productImage = $_FILES['product_image'];
 $productWeight = htmlspecialchars($_POST['product_weight']);
 $productLength = htmlspecialchars($_POST['product_length']);
 $productHeight = htmlspecialchars($_POST['product_height']);
@@ -39,7 +35,7 @@ $productOQty = htmlspecialchars($_POST['product_Openqty']);
 $data = array(
     'product_name' => $productName,
     'product_sku' => $productSKU,
-    'product_image' => $productImage,
+    'product_image' => $_FILES['product_image'],
     'selling_price' => $productSPrice,
     'cost_price' => $productCPrice,
     'unit' => $productUnit,
@@ -74,7 +70,8 @@ $response = curl_exec($curl);
 
 // Check for errors
 if ($response === false) {
-    echo 'cURL error: ' . curl_error($curl);
+    $error = 'cURL error: ' . curl_error($curl);
+    header("Location: index.php?error=" . urlencode($error));
 } else {
     // Output API response
     echo $response;
