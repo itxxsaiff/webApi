@@ -6,6 +6,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+          <a aria-current="page" href="view.php" <?php if($_SERVER['PHP_SELF'] == '/mywebsite/view.php'){ echo 'class="nav-link active text-decoration-underline"';}else{echo 'class="nav-link"';} ?>>View Product</a>
+        </li>
         <li class="nav-item">
           <a aria-current="page" href="index.php" <?php if($_SERVER['PHP_SELF'] == '/mywebsite/index.php'){ echo 'class="nav-link active text-decoration-underline"';}else{echo 'class="nav-link"';} ?>>Add Product</a>
         </li>

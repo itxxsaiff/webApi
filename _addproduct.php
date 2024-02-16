@@ -74,7 +74,9 @@ if ($response === false) {
     header("Location: index.php?error=" . urlencode($error));
 } else {
     // Output API response
-    echo $response;
+    if($response === 'Success'){
+        header("Location: view.php");
+    }
 }
 
 // Close cURL session
