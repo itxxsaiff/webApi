@@ -30,12 +30,14 @@ $productCTax = htmlspecialchars($_POST['cost_Tax']);
 $productQty = htmlspecialchars($_POST['product_qty']);
 $productOQty = htmlspecialchars($_POST['product_Openqty']);
 
+// Initialize cURL session
+$curl = curl_init($url);
+
 // Data to be sent to the API
-// Creating the $data array
 $data = array(
     'product_name' => $productName,
     'product_sku' => $productSKU,
-    'product_image' => $_FILES['product_image'],
+    'product_image' => curl_file_create($productImage['tmp_name'], $productImage['type'], $productImage['name']),
     'selling_price' => $productSPrice,
     'cost_price' => $productCPrice,
     'unit' => $productUnit,
@@ -55,8 +57,6 @@ $data = array(
     'product_Openqty' => $productOQty
 );
 
-// Initialize cURL session
-$curl = curl_init($url);
 
 
 
