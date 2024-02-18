@@ -51,7 +51,7 @@
               <td class='p-2 text-center'>
               <img src='" . $product['image'] . "' class='img-fluid' style='width: 50px;'>
               </td>
-              <td class='text-center' style='padding-top: 1.9rem'><a href='productView.php?productID=". $product['id'] ."' class='text-decoration-none'>" . $product['name'] ." </a></td>
+              <td class='text-center' style='padding-top: 1.9rem'><a href='productView.php?productID=". $product['id'] ."' class='text-decoration-none'>" . htmlspecialchars_decode($product['name']) ." </a></td>
               <td class='text-center' style='padding-top: 1.9rem'>". $product['quantity'] ."</td>
               <td class='text-center' style='padding-top: 1.9rem'>" . $product['cost_price'] . "</td>
               <td class='text-center' style='padding-top: 1.9rem'>" . $product['sale_price'] . "</td>
