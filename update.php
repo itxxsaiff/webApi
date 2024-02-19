@@ -21,6 +21,10 @@
         }else{
           header("Location: view.php");
         }
+
+        if(isset($_GET['error']) && $_GET['error'] === 'true'){
+            echo "<script>alert('Please give correct Inputs');</script>";
+        }
     ?>
 
 
@@ -104,7 +108,7 @@
                                  ?>
                                 <div class="col-9">
                                     <img src="<?php echo $productImage; ?>" alt="" id="uploadedImage" class="img-fluid mb-3 w-25">
-                                    <input type="file" onchange="displayImage(this)" class="form-control" name="product_image">
+                                    <input type="file" onchange="displayImage(this)" class="form-control" name="product_image" accept=".jpg, .jpeg, .png">
                                 </div>
                             </div>
                         </div>

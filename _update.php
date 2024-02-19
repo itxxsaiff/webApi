@@ -64,13 +64,10 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
 
     $response = curl_exec($curl);
     echo $response;
-    if ($response === false) {
-        $error = 'cURL error: ' . curl_error($curl);
-        header("Location: view.php?error=" . urlencode($error));
-    } else {
-        if($response === 'Success'){
-            header("Location: view.php");
-        }
+    if($response === 'Success'){
+        header("Location: view.php");
+    }else{
+        header("Location: update.php?error=true");
     }
     curl_close($curl);
 }

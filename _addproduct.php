@@ -67,16 +67,13 @@ curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
 // Execute cURL request
 $response = curl_exec($curl);
+$pattern = "/Error!/i";
 
 // Check for errors
-if ($response === false) {
-    $error = 'cURL error: ' . curl_error($curl);
-    header("Location: index.php?error=" . urlencode($error));
-} else {
-    // Output API response
-    if($response === 'Success'){
-        header("Location: view.php");
-    }
+if($response === 'Success'){
+    header("Location: view.php");
+}else{
+    header("Location: index.php?error=true");
 }
 
 // Close cURL session
