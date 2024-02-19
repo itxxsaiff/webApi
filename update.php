@@ -58,7 +58,7 @@
                                     <label for="" class="text-danger fs-5">Name: *</label>
                                 </div>
                                 <div class="col-9">
-                                    <input type="text" name="product_name" class="form-control" value="<?php echo $data['product_name']; ?>" required>
+                                    <input type="text" name="product_name" class="form-control" value="<?php echo htmlspecialchars_decode($data['product_name']); ?>" required>
                                 </div>
                             </div>
                             <div class="row mt-4">
